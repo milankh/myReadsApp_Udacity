@@ -11,7 +11,7 @@ class BooksApp extends React.Component {
     state = {
         books: [],
         searchBooks: []
-        
+
     };
 
    //Sets the values for component as soon as its mounted 
@@ -53,12 +53,15 @@ class BooksApp extends React.Component {
                     this.setState({
                         searchBooks: []
                     })
-                } else {
-                    
+                }else {
                     this.updateBook(books);
                 }
             });
-            } 
+            }else{
+                this.setState({
+                    searchBooks: []
+                })
+            }
     };
 
     //Sets state with returned books only if the response is successful 
